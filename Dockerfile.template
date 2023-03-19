@@ -1,0 +1,8 @@
+FROM fpco/stack-build:%%LTS_VERSION%%
+
+RUN stack upgrade
+RUN stack --resolver %%LTS_VERSION%% install ormolu hlint hoogle
+RUN stack --resolver %%LTS_VERSION%% build pretty-simple
+RUN hoogle generate
+
+COPY "./.ghci" "root/.ghci"
