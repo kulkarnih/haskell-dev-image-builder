@@ -2,13 +2,13 @@
 
 A Haskell dev environment Docker image builder inspired by https://github.com/GoNZooo/docker-development
 
-Usage
+## Usage
 ```
 ./start.sh <LTS Snapshot>
 ./start.sh lts-20.14
 ```
 
-Pre-requisites
+## Pre-requisites
 Make sure the following scripts are marked as executable.
 - start.sh
 - render-dockerfile.sh
