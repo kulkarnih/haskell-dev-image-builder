@@ -25,12 +25,8 @@ docker build -f "$DOCKERFILE" -t "$SNAPSHOT_IMAGE_NAME" -t "$LATEST_IMAGE_NAME" 
 if [ $? -eq 0 ]; then
     docker push "$SNAPSHOT_IMAGE_NAME"
     docker push "$LATEST_IMAGE_NAME"
+    printf "Pushed $SNAPSHOT_IMAGE_NAME and $LATEST_IMAGE_NAME."
 else
     printf "Docker image build failed.\n"
 fi
 
-if [ $? -eq 0 ]; then
-    printf "Pushed $SNAPSHOT_IMAGE_NAME and $LATEST_IMAGE_NAME."
-else
-    printf "Docker image push failed.\n"
-fi
